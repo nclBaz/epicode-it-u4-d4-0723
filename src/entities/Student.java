@@ -1,9 +1,12 @@
 package entities;
 
+import interfaces.Jumper;
+import interfaces.Runner;
+
 import java.util.Objects;
 import java.util.Random;
 
-public class Student {
+public class Student implements Runner, Jumper {
 
 	public static String school = "Epicode";
 	// LISTA ATTRIBUTI
@@ -122,5 +125,15 @@ public class Student {
 			return false; // Se o è null oppure se appartengono a classi diverse ritorna false
 		Student student = (Student) o; // casting esplicito
 		return this.id == student.id && Objects.equals(this.name, student.name) && Objects.equals(this.surname, student.surname);
+	}
+
+	@Override
+	public void run() {
+		System.out.println("Sono uno studente e sto correndo");
+	}
+
+	@Override
+	public void jump() {
+		System.out.println("Sono uno studente e sto saltando");
 	}
 }

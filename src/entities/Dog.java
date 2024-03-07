@@ -1,6 +1,8 @@
 package entities;
 
-public class Dog extends Animal {
+import interfaces.Runner;
+
+public class Dog extends Animal implements Runner {
 
 	// Eredito name, age dal padre
 	public Dog(String name, int age) {
@@ -18,5 +20,10 @@ public class Dog extends Animal {
 
 	public void bark() {
 		System.out.println("BAU!");
+	}
+
+	@Override
+	public void run() {
+		System.out.println("Sono un cane e sto correndo");
 	}
 }

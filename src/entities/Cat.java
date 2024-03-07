@@ -1,6 +1,8 @@
 package entities;
 
-public class Cat extends Animal {
+import interfaces.Jumper;
+
+public class Cat extends Animal implements Jumper {
 	// Eredito name,age dal padre
 	// In più posso aggiungere ulteriori attributi
 	private boolean hasBoots;
@@ -44,5 +46,10 @@ public class Cat extends Animal {
 	@Override
 	public void getInfo() {
 		System.out.println("Ciao le mie info sono: " + this.name + ", " + this.age + ", " + this.hasBoots);
+	}
+
+	@Override
+	public void jump() {
+		System.out.println("Sono un gatto e sto saltando");
 	}
 }

@@ -2,6 +2,8 @@ import entities.Animal;
 import entities.Cat;
 import entities.Dog;
 import entities.Student;
+import interfaces.Jumper;
+import interfaces.Runner;
 
 public class Main {
 	public static void main(String[] args) {
@@ -43,5 +45,30 @@ public class Main {
 				((Cat) currentAnimal).meow();
 			}
 		}
+
+		printAnimal(felix);
+		printAnimal(fido);
+		printDog(fido);
+
+		Runner[] runners = {fido, aldo};
+		for (int i = 0; i < runners.length; i++) {
+			runners[i].run();
+		}
+
+		Jumper[] jumpers = {felix, aldo};
+
+		for (int i = 0; i < jumpers.length; i++) {
+			jumpers[i].jump();
+		}
+	}
+
+	public static void printAnimal(Animal a) {
+		System.out.println(a);
+		a.sayYourName();
+	}
+
+	public static void printDog(Dog d) {
+		System.out.println(d);
+		d.bark();
 	}
 }
