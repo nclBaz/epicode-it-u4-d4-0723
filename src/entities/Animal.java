@@ -2,11 +2,14 @@ package entities;
 
 import java.util.Objects;
 
-public class Animal {
+public abstract class Animal {
+	// Abstract <-- non si potranno creare oggetti Animal
+	// Ma questa classe comunque è utile come fornitrice di proprietà e funzionalità
+	// Per le figlie
 
 	// Attributi
-	public String name;
-	public int age;
+	protected String name;
+	protected int age;
 
 	// Costruttori
 	public Animal(String name, int age) {
@@ -38,4 +41,11 @@ public class Animal {
 		Animal animal = (Animal) o;
 		return age == animal.age && Objects.equals(name, animal.name);
 	}
+
+	// Metodi Astratti
+	public abstract void getInfo();
+	// Un metodo astratto serve per forzare i figli ad avere
+	// questo metodo implementato
+	// Lo implementeranno a loro discrezione, non è il padre
+	// a definire che cosa fa questo metodo
 }

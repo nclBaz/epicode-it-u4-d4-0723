@@ -40,4 +40,9 @@ public class Cat extends Animal {
 				", age=" + age +
 				"} ";
 	}
+
+	@Override
+	public void getInfo() {
+		System.out.println("Ciao le mie info sono: " + this.name + ", " + this.age + ", " + this.hasBoots);
+	}
 }
